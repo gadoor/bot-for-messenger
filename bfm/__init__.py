@@ -6,10 +6,12 @@
 """
 from tornado.web import Application
 from bfm.views.callback import Callback
-
+from bfm.views.index import Index
 
 def application():
     app = Application([
+        (r"/", Index),
+        (r"/index", Index),
         (r"/callback", Callback),
     ])
     return app
